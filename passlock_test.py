@@ -1,5 +1,4 @@
-import unittest
-from passlock import User
+import unittest ;from passlock import User
 from passlock import Credentials
 import pyperclip
 
