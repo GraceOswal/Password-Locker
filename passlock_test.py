@@ -29,5 +29,21 @@ class TestClass(unittest.TestCase):
         self.new_user.save_user() #this saves new user
         self.assertEqual(len(User.user_list),1)
         
+    class TestCredentials(unittest.TestCase):
+        """
+        Test class that defines test cases for credentials class
+        """
+        def setUp(self):
+            """
+            This method runs before each individual credentials test methods' runs
+            """
+            
+            self.new_credential = Credentials("Swift","Gracegee","grcee")
+            
+        def test_init(self):
+            """
+            Test case that checks if new Credentials instance has been initialized properly
+            """
+        
 if __name__ == '__main__':
     unittest.main()
