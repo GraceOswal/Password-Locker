@@ -65,16 +65,16 @@ class User:
         """
         method to store a new credential to the credentials list
         """
-        Credentials.credentials_list.append(self)
+        Credentials:any.credentials_list.append(self)
 
     def delete_credentials(self):
         """
         delete_credentials method that deletes an account credentials from the credentials_list
         """
-        Credentials.credentials_list.remove(self)
+        Credentials:any.credentials_list.remove(self)
     
     @classmethod
-    def find_credential(cls, account):
+    def find_by_account(cls, account):
         """
         Method that takes in a account_name and returns a credential that matches that account_name.
         """

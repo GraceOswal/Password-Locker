@@ -93,6 +93,8 @@ class TestClass(unittest.TestCase):
         
         found_credential = Credentials.find_by_account("Gmail")
         self.assertEqual(found_credential.account,test_credential.account)
+        
+    
 
         
 if __name__ == '__main__':
