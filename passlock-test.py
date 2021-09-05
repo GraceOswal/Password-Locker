@@ -1,10 +1,10 @@
-import unittest #Importing the unittest module
-from passlock import User  #this imports the user class
-from passlock import Credentials  #this imports the credential class
+import unittest  # Importing the unittest module
+from passlock import User  # this imports the user class
+from passlock import Credentials  # this imports the credential class
 
-class TestClass(unittest.TestCase):
+class TestUser(unittest.TestCase):
     """
-    This test defines the test cases for the behaviour of user classself.
+    This test class defines the test cases for the behaviour of user class.
     """
     
     def setUp(self):

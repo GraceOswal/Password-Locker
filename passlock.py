@@ -1,20 +1,16 @@
-import random
-import string 
-import pyperclip
-
 class User:
     """
     Class that generates new instances of contacts.
     """
     
-    user_list = []
+    user_list = []   #Empty user list
     
     def __init__(self,username,password):
         
         #docstring removed for simplicity
     
-            self.user_name = user_name
-            self.pass_word = pass_word
+            self.username = user_name
+            self.password = pass_word
             
     def save_user (self):
         """
