@@ -1,3 +1,6 @@
+import random
+import string
+import pyperclip
 class User:
     """
     Class that generates new instances of contacts.
@@ -9,8 +12,8 @@ class User:
         
         #docstring removed for simplicity
     
-            self.username = user_name
-            self.password = pass_word
+            self.username = username
+            self.password = password
             
     def save_user (self):
         """
@@ -34,9 +37,11 @@ class User:
     
     class Credentials():
         """
-    This class creates credentials that help create new objects of credentials
-    """
+        This class creates credentials that help create new objects of credentials
+        """
+        
     credentials_list = []
+        
     @classmethod
     def verify_user(cls,username, password):
         """
