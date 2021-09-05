@@ -1,6 +1,7 @@
 import unittest
 from passlock import User
 from passlock import Credentials
+import pyperclip
 
 class TestClass(unittest.TestCase):
     """
@@ -93,6 +94,34 @@ class TestClass(unittest.TestCase):
         
         found_credential = Credentials.find_by_account("Gmail")
         self.assertEqual(found_credential.account,test_credential.account)
+        
+    def test_credential_exist(self):
+        """
+        test to check if we can return a true or false based on whether we find or can't find the credential.
+        """
+        self.new_credential.save_details()
+        test_credential = Credentials("Gmail", "kinyuagee", "ntongu")  
+        test_credential.save_details()
+        credential_is_found = Credentials.if_credential_exist("Gmail")
+        self.assertTrue(credential_is_found)
+
+    def test_display_all_saved_credentials(self):
+        '''
+        method that displays all the credentials 
+        that has been saved by the user
+        '''
+
+        self.assertEqual(Credentials.display_credentials(),Credentials.credentials_list)
+        
+    def test_copy_password(self):
+        '''
+        Test to confirm that we are copying the password from found account
+        '''
+        
+        self.new_credentials.save_details()
+        Credentials.copy_password("ntongu")
+        
+        self.assertEqual(self.new_credentials.password,pyperclip.paste())
         
     
 
