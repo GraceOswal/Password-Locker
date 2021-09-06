@@ -24,7 +24,7 @@ def login_user(username,password):
     """
     function that checks whether a user exist and then login the user in.
     """
-
+  
     check_user = Credentials.verify_user(username,password)
     return check_user
 
@@ -96,7 +96,7 @@ def passlocker():
                 print("Invalid password please try again")
         save_user(create_new_user(username,password))
         print("*"*85)
-        print(f"Hello {{username}}, Your account has been created succesfully! Your password is: {{password}}")
+        print(f"Hello {username}, Your account has been created succesfully! Your password is: {{password}}")
         print("*"*85)
     elif short_code == "li":
         print("*"*50)
@@ -141,7 +141,7 @@ def passlocker():
                 print('*' * 30)
                 print('_'* 30)
                 for account in display_accounts_details():
-                    print(f" Account:{account.account} \n User Name:{{username}}\n Password:{{password}}")
+                    print(f" Account:{account.account} \n User Name:{username}\n Password:{password}")
                     print('_'* 30)
                 print('*' * 30)
             else:
@@ -151,9 +151,9 @@ def passlocker():
             search_name = input().lower()
             if find_credential(search_name):
                 search_credential = find_credential(search_name)
-                print(f"Account Name : {{search_credential.account}}")
+                print(f"Account Name : {search_credential.account}")
                 print('-' * 50)
-                print(f"Username: {{search_credential.username}} Password :{{search_credential.password}}")
+                print(f"User Name: {{search_credential.userName} Password :{search_credential.password}")
                 print('-' * 50)
             else:
                 print("We apologize, That Credential does not exist")

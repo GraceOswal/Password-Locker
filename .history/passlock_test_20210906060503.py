@@ -101,7 +101,7 @@ class TestClass(unittest.TestCase):
         test to check if we can return a true or false based on whether we find or can't find the credential.
         """
         self.new_credential.save_details()
-        test_credential = Credentials("Gmail", "kinyuagee", "ntongu")
+        test_credential = Credentials("Gmail", "kinyuagee", "ntongu")  
         test_credential.save_details()
 
         credential_exists = Credentials.credential_exist("Gmail")

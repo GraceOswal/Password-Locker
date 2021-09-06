@@ -24,7 +24,7 @@ def login_user(username,password):
     """
     function that checks whether a user exist and then login the user in.
     """
-
+  
     check_user = Credentials.verify_user(username,password)
     return check_user
 
@@ -96,7 +96,7 @@ def passlocker():
                 print("Invalid password please try again")
         save_user(create_new_user(username,password))
         print("*"*85)
-        print(f"Hello {{username}}, Your account has been created succesfully! Your password is: {{password}}")
+        print(f"Hello {username}, Your account has been created succesfully! Your password is: {{password}}")
         print("*"*85)
     elif short_code == "li":
         print("*"*50)
