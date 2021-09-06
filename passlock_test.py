@@ -5,7 +5,7 @@ from launchpadlib.credentials import Credentials
 
 
 
-class TestUser(unittest.TestCase):
+class TestUser( Credentials):
     """
     This Test class defines test cases for the User class.
     """
@@ -112,13 +112,13 @@ class TestUser(unittest.TestCase):
         credentials_exists = Credentials.credentials_exist("Gmail")
         self.assertTrue(credentials_exists)
 
-    def test_display_credentials(self):
+    def test_display_all_credentials(self):
         '''
         method that displays all the credentials
         that has been saved by the user
         '''
 
-        self.assertEqual(Credentials.display_credentials(), Credentials.credentials_list)
+        self.assertEqual(Credentials.display_all_credentials(), Credentials.credentials_list)
 
     def test_copy_password(self):
         '''

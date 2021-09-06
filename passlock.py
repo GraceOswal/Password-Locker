@@ -99,7 +99,7 @@ class User:
 
     @classmethod
 
-    def display_credentials(cls):
+    def display_all_credentials(cls):
         """
         Method that returns all items in the credentials list
         """
