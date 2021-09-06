@@ -107,3 +107,8 @@ class User:
     def copy_password(cls, account):
         found_account = Credentials.find_by_account(account)
         pyperclip.copy(found_account.password)
+ 
+s
+
+~!@#$%^&*"
+i

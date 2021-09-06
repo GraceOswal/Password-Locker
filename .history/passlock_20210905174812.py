@@ -5,7 +5,7 @@ class User:
     """
     Class that generates new instances of contacts.
     """
-
+    
     user_list = []   #Empty user list
     
     def __init__(self,username,password):
@@ -107,3 +107,9 @@ class User:
     def copy_password(cls, account):
         found_account = Credentials.find_by_account(account)
         pyperclip.copy(found_account.password)
+
+    def generatePassword(stringLength=8):
+        """Generate a random password string of letters and digits and special characters"""
+        password = string.ascii_uppercase + string.ascii_lowercase + string.digits + "~!@#$%^&*"
+        return ''.join(random.choice(password) for i in range(stringLength))
+    
