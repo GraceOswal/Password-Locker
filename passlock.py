@@ -53,12 +53,12 @@ class User:
                     a_user == user.username
         return a_user
 
-    def __init__(self,account,userName, password):
+    def __init__(self,account,username, password):
         """
         method that defines user credentials to be stored
         """
         self.account = account
-        self.userName = userName
+        self.username = username
         self.password = password
     
     def save_details(self):
