@@ -1,7 +1,10 @@
 import unittest
 from passlock import User
-import Credentials
+from passlock import Credential
+
 import pyperclip
+from launchpadlib.credentials import Credentials
+from pwd import copy_password
 
 class TestClass(unittest.TestCase):
     """
