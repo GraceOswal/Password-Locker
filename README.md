@@ -1,7 +1,6 @@
 # Password-Locker
 
 ##Author
-
 Grace Osswal
 
 ## Description
@@ -34,7 +33,7 @@ inside the app.
 
 * Open Terminal {Ctrl+Alt+T}
 
-* git clone ```   ```
+* git clone ```https://github.com/GraceOswal/Password-Locker.git```
 
 * cd Password-Locker
 
