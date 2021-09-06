@@ -20,28 +20,28 @@ class User:
         A method that saves a new user instance into the user list
         """
         User.user_list.append(self)
-        
-            
+
+
     @classmethod
     def display_user(cls):
         '''
         method that returns the user list
         '''
         return cls.user_list
-    
+
     def delete_user (self):
         '''
         delete_account method removes a saved existing account
         '''
         User.user_list.remove(self)
-    
+
     class Credentials():
         """
         This class creates credentials that help create new objects of credentials
         """
-        
+
     credentials_list = []
-        
+
     @classmethod
     def verify_user(cls,username, password):
         """
@@ -60,19 +60,19 @@ class User:
         self.account = account
         self.username = username
         self.password = password
-    
+
     def save_details(self):
         """
         method to store a new credential to the credentials list
         """
-        Credentials:any.credentials_list.append(self)
+        Credential.credentials_list.append(self)
 
     def delete_credentials(self):
         """
         delete_credentials method that deletes an account credentials from the credentials_list
         """
-        Credentials:any.credentials_list.remove(self)
-    
+        Credentials.credentials_list.remove(self)
+
     @classmethod
     def find_by_account(cls, account):
         """
@@ -81,9 +81,9 @@ class User:
         for credential in cls.credentials_list:
             if credential.account == account:
                 return credential
-   
+
     @classmethod
-    
+
     def credential_exists(cls, account):
         """
         Method that checks if a credential exists from the credential list

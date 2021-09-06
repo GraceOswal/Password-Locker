@@ -49,14 +49,14 @@ class TestClass(unittest.TestCase):
             self.assertEqual(self.new_credential.username,"Gracegee")
             self.assertEqual(self.new_credential.password,"grcee")
 
-    def save_credential_test(self):
+    def test_save_credential(self):
         """
         test case to test if the crential object is saved into the credentials list.
         """
         self.new_credential.save_details()
         self.assertEqual(len(Credentials.credential_list),1)
 
-    def tearDown(Credentials):
+    def tearDown(self):
         '''
         method that does clean up after each test case has run.
         '''
@@ -64,7 +64,7 @@ class TestClass(unittest.TestCase):
 
 #other test cases here
 
-    def test_case(self,save_multiple_accounts, Credentials):
+    def test_save_multiple_accounts(self):
         '''
         test_save_multiple_account to check if we can save
         many account details
@@ -74,19 +74,19 @@ class TestClass(unittest.TestCase):
         test_credential.save_details()
         self.assertEqual(len(Credentials.credentials_list),2)
 
-    def test_case(self, delete_credentials):
+    def test_delete_credentials(self):
         """
         test_delete_credentials to test if we can remove an account from our
         credential list
         """
-        self.new_credentials.save_details()
-        test_credentials = Credentials("Gmail","kinyuagee","ntongu")
-        test_credentials.save_details()
+        self.new_credential.save_details()
+        test_credential = Credentials("Gmail","kinyuagee","ntongu")
+        test_credential.save_details()
 
-        self.new_credentials.delete_credentials()  #deleting saved details
+        self.new_credential.delete_credentials()  #deleting saved details
         self.assertEqual(len(Credentials.credential_list),2)
 
-    def test_case(self,find_credentials):
+    def test_find_credentials_by_account(self):
         """
         test_find_credentials checks if we can find a credential entry by its
         account name and display the details of the credential
@@ -98,7 +98,7 @@ class TestClass(unittest.TestCase):
         found_credential = Credentials.find_by_account("Gmail")
         self.assertEqual(found_credential.account,test_credential.account)
 
-    def test_case(self, credential_exists):
+    def test_credential_exists(self):
         """
         test to check if we can return a true or false based on whether we find or can't find the credential.
         """
@@ -109,15 +109,15 @@ class TestClass(unittest.TestCase):
         credential_exists = Credentials.credential_exist("Gmail")
         self.assertTrue(credential_exists)
 
-    def test_case(display_credentials):
+    def test_display_credentials(self):
         '''
         method that displays all the credentials
         that has been saved by the user
         '''
 
-        assert_equal(Credentials.display_credentials(),Credentials.credentials_list)
+        self.assertEqual(Credentials.display_credentials(),Credentials.credentials_list)
 
-    def test_case_copy_password(self):
+    def test_copy_password(self):
         '''
         Test to confirm that we are copying the password from found account
         '''
