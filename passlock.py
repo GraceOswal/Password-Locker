@@ -1,20 +1,22 @@
 import random
 import string
+
 import pyperclip
+
 class User:
     """
     Class that generates new instances of contacts.
     """
 
     user_list = []   #Empty user list
-    
+
     def __init__(self,username,password):
-        
+
         #docstring removed for simplicity
-    
+
             self.username = username
             self.password = password
-            
+
     def save_user (self):
         """
         A method that saves a new user instance into the user list
@@ -93,7 +95,7 @@ class User:
             if credential.account == account:
                 return True
         return False
-    
+
     @classmethod
 
     def display_credentials(cls):

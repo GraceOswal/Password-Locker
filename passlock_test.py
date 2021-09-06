@@ -1,6 +1,6 @@
 import unittest
 from passlock import User
-
+import Credentials
 import pyperclip
 
 class TestClass(unittest.TestCase):
