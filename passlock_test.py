@@ -5,7 +5,7 @@ from launchpadlib.credentials import Credentials
 
 
 
-class TestClass(unittest.TestCase):
+class TestUser(unittest.TestCase):
     """
     This Test class defines test cases for the User class.
     """
@@ -32,7 +32,7 @@ class TestClass(unittest.TestCase):
         self.new_user.save_user() #this saves new user
         self.assertEqual(len(User.user_list),1)
 
-    class CredentialsTestClass(unittest.TestCase):
+    class TestCredentials(unittest.TestCase):
         """
         Test class that defines test cases for credentials class
         """
@@ -51,11 +51,11 @@ class TestClass(unittest.TestCase):
             self.assertEqual(self.new_credentials.username,"Gracegee")
             self.assertEqual(self.new_credentials.password,"grcee")
 
-    def test_save_credential(self):
+    def test_save_credentials(self):
         """
         test case to test if the credential object is saved into the credentials list.
         """
-        self.new_credentials.save_details()
+        self.new_credentials.save_credentials()
         self.assertEqual(len(Credentials.credentials_list),1)
 
     def tearDown(self):
@@ -71,9 +71,9 @@ class TestClass(unittest.TestCase):
         test_save_multiple_account to check if we can save
         many account details
         '''
-        self.save_credentials()
-        test_Credentials = Credentials("Gmail","kinyuagee","ntongu") #new credentials
-        test_Credentials.Credentials()
+        self.new_credentials.save_credentials()
+        test_credentials = Credentials("Gmail","kinyuagee","ntongu") #new credentials
+        test_credentials.save_credentials()
         self.assertEqual(len(Credentials.credentials_list),2)
 
     def test_delete_credentials(self):
@@ -81,9 +81,9 @@ class TestClass(unittest.TestCase):
         test_delete_credentials to test if we can remove an account from our
         credential list
         """
-        self.Credentials.save_credentials()
+        self.new_credentials.save_credentials()
         test_credentials = Credentials("Gmail","kinyuagee","ntongu")
-        test_credentials.save_details()
+        test_credentials.save_credentials()
 
         self.credentials.delete_credentials()  #deleting saved details
         self.assertEqual(len(Credentials.credential_list),2)
@@ -93,23 +93,24 @@ class TestClass(unittest.TestCase):
         test_find_credentials checks if we can find a credential entry by its
         account name and display the details of the credential
         """
-        self.Credentials.save_details()
+        self.new_credentials.save_credentials()
         test_credentials = Credentials("Gmail","kinyuagee","ntongu")
-        test_credentials.save_details()
+        test_credentials.save_credentials()
 
-        found_credential = Credentials.find_by_account("Gmail")
-        self.assertEqual(found_credential.account,test_credentials.account)
+        found_credentials = Credentials.find_by_account("Gmail")
 
-    def test_credential_exists(self):
+        self.assertEqual(found_credentials.account,test_credentials.account)
+
+    def test_credentials_exists(self):
         """
         test to check if we can return a true or false based on whether we find or can't find the credential.
         """
-        self.credentials.save_details()
+        self.new_credentials.save_credentials()
         test_credentials = Credentials("Gmail", "kinyuagee", "ntongu")
-        test_credentials.save_details()
+        test_credentials.save_credentials()
 
-        credential_exists = Credentials.credential_exist("Gmail")
-        self.assertTrue(credential_exists)
+        credentials_exists = Credentials.credentials_exist("Gmail")
+        self.assertTrue(credentials_exists)
 
     def test_display_credentials(self):
         '''
@@ -117,13 +118,13 @@ class TestClass(unittest.TestCase):
         that has been saved by the user
         '''
 
-        self.assertEqual(Credentials.display_credentials(),Credentials.credentials_list)
+        self.assertEqual(Credentials.display_credentials(), Credentials.credentials_list)
 
     def test_copy_password(self):
         '''
         Test to confirm that we are copying the password from found account
         '''
-
+        self.new_credentials.save_credentials()
         Credentials.copy_password("ntongu")
 
         self.assertEqual(self.new_credentials.password,pyperclip.paste())

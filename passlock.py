@@ -64,11 +64,11 @@ class User:
         self.username = username
         self.password = password
 
-    def save_details(self):
+    def save_credentials(self):
         """
         method to store a new credential to the credentials list
         """
-        credentials.credentials_list.append(self)
+        Credentials.credentials_list.append(self)
 
     def delete_credentials(self):
         """
@@ -81,19 +81,19 @@ class User:
         """
         Method that takes in a account_name and returns a credential that matches that account_name.
         """
-        for credential in cls.credentials_list:
-            if credential.account == account:
-                return credential
+        for credentials in cls.credentials_list:
+            if credentials.account == account:
+                return credentials
 
     @classmethod
 
-    def credential_exists(cls, account):
+    def credentials_exists(cls, account):
         """
         Method that checks if a credential exists from the credential list
         and returns true or false depending if the credential exists.
         """
-        for credential in cls.credentials_list:
-            if credential.account == account:
+        for credentials in cls.credentials_list:
+            if credentials.account == account:
                 return True
         return False
 
