@@ -2,6 +2,7 @@ import random
 import string
 
 import pyperclip
+import credentials
 
 class User:
     """
@@ -67,7 +68,7 @@ class User:
         """
         method to store a new credential to the credentials list
         """
-        Credential.credentials_list.append(self)
+        credentials.credentials_list.append(self)
 
     def delete_credentials(self):
         """
