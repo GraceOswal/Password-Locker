@@ -95,15 +95,15 @@ class User:
         return False
     
     @classmethod
-    
+
     def display_credentials(cls):
         """
         Method that returns all items in the credentials list
         """
         return cls.credentials_list
-    
+
     @classmethod
-    
+
     def copy_password(cls, account):
         found_account = Credentials.find_by_account(account)
         pyperclip.copy(found_account.password)
