@@ -1,5 +1,6 @@
 #!/usr/bin/env python3.8
-from passlock import User, Credentials
+from passlock import User
+from launchpadlib.credentials import Credentials
 
 def function():
     print ("   ______   ___          ______     ______                                                     ")
