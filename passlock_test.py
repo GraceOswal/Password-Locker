@@ -32,7 +32,7 @@ class TestClass(unittest.TestCase):
         self.new_user.save_user() #this saves new user
         self.assertEqual(len(User.user_list),1)
 
-    class TestCredentials(unittest.TestCase):
+    class CredentialsTestClass(unittest.TestCase):
         """
         Test class that defines test cases for credentials class
         """
@@ -53,7 +53,7 @@ class TestClass(unittest.TestCase):
 
     def test_save_credential(self):
         """
-        test case to test if the crential object is saved into the credentials list.
+        test case to test if the credential object is saved into the credentials list.
         """
         self.new_credentials.save_details()
         self.assertEqual(len(Credentials.credentials_list),1)
@@ -71,9 +71,9 @@ class TestClass(unittest.TestCase):
         test_save_multiple_account to check if we can save
         many account details
         '''
-        self.new_credentials.save_details()
-        test_credentials = Credentials("Gmail","kinyuagee","ntongu") #new credentials
-        test_credentials.save_details()
+        self.save_credentials()
+        test_Credentials = Credentials("Gmail","kinyuagee","ntongu") #new credentials
+        test_Credentials.Credentials()
         self.assertEqual(len(Credentials.credentials_list),2)
 
     def test_delete_credentials(self):
@@ -81,11 +81,11 @@ class TestClass(unittest.TestCase):
         test_delete_credentials to test if we can remove an account from our
         credential list
         """
-        self.new_credentials.save_details()
+        self.Credentials.save_credentials()
         test_credentials = Credentials("Gmail","kinyuagee","ntongu")
         test_credentials.save_details()
 
-        self.new_credentials.delete_credentials()  #deleting saved details
+        self.credentials.delete_credentials()  #deleting saved details
         self.assertEqual(len(Credentials.credential_list),2)
 
     def test_find_credentials_by_account(self):
@@ -93,7 +93,7 @@ class TestClass(unittest.TestCase):
         test_find_credentials checks if we can find a credential entry by its
         account name and display the details of the credential
         """
-        self.new_credentials.save_details()
+        self.Credentials.save_details()
         test_credentials = Credentials("Gmail","kinyuagee","ntongu")
         test_credentials.save_details()
 
@@ -104,7 +104,7 @@ class TestClass(unittest.TestCase):
         """
         test to check if we can return a true or false based on whether we find or can't find the credential.
         """
-        self.new_credentials.save_details()
+        self.credentials.save_details()
         test_credentials = Credentials("Gmail", "kinyuagee", "ntongu")
         test_credentials.save_details()
 
