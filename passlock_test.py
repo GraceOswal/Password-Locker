@@ -109,23 +109,22 @@ class TestClass(unittest.TestCase):
         credential_exists = Credentials.credential_exist("Gmail")
         self.assertTrue(credential_exists)
 
-    def test_case(self,display_all_saved_credentials):
+    def test_case(display_credentials):
         '''
         method that displays all the credentials
         that has been saved by the user
         '''
 
-        self.assertEqual(Credentials.display_credentials(),Credentials.credentials_list)
+        assert_equal(Credentials.display_credentials(),Credentials.credentials_list)
 
-    def test_case(Credentials, copy_password):
+    def test_case_copy_password(self):
         '''
         Test to confirm that we are copying the password from found account
         '''
 
+        test_credential=copy_password("ntongu")
 
-        Credentials.copy_password("ntongu")
-
-        assertEqual(new_credentials.password,pyperclip.paste())
+        self.assertEqual(self.new_credentials.password,pyperclip.paste())
 
 
 
