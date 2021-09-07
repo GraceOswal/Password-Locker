@@ -1,7 +1,7 @@
 import unittest
-from passlock import User
 import pyperclip
 from launchpadlib.credentials import Credentials
+from passlock import User
 
 
 
