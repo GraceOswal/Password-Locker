@@ -15,8 +15,8 @@ class User:
 
         #docstring removed for simplicity
 
-            self.username = username
-            self.password = password
+        self.username = username
+        self.password = password
 
     def save_user (self):
         """
