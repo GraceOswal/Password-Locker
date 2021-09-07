@@ -56,13 +56,13 @@ def save_credentials(Credentials):
     Function to save Credentials to the credentials list
     """
     Credentials.save_credentials()
-def display_accounts_details():
+def display_all_credentials():
     """
     Function that returns all the saved credential.
     """
     return Credentials.display_credentials()
 
-def delete_credential(credentials):
+def delete_credentials(credentials):
     """
     Function to delete a Credentials from credentials list
     """
@@ -152,12 +152,12 @@ def passlock():
             print('\n')
             print("Welcome, Life is Great with us!!")
         elif short_code == "dc":
-            if display_accounts_details():
+            if display_all_credentials():
                 print("Here's your list of acoounts: ")
 
                 print('*' * 30)
                 print('_'* 30)
-                for account in display_accounts_details():
+                for account in display_all_credentials():
                     print(f" Account:{account.account} \n User Name:{{username}}\n Password:{{password}}")
                     print('_'* 30)
                 print('*' * 30)

@@ -5,7 +5,7 @@ from launchpadlib.credentials import Credentials
 
 
 
-class TestUser( Credentials):
+class TestUser(Credentials):
         """
         This Test class defines test cases for the User class.
         """
