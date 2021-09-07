@@ -1,6 +1,7 @@
 #!/usr/bin/env python3.8
 from passlock import User
 from launchpadlib.credentials import Credentials
+from launchpadlib import credentials
 
 def function():
     print ("   ______   ___          ______     ______                                                     ")
@@ -43,17 +44,18 @@ def login_user(username,password):
     check_user = Credentials.verify_user(username,password)
     return check_user
 
-def create_new_credential(account,userName,password):
+def create_new_credential(account,username,password):
     """
     Function that creates new credentials for a given user account
     """
-    new_credential = Credentials(account,userName,password)
-    return new_credential
-def save_credentials(credentials):
+    new_credentials = Credentials(account,username,password)
+    return new_credentials
+
+def save_credentials(Credentials):
     """
     Function to save Credentials to the credentials list
     """
-    credentials. save_details()
+    Credentials.save_credentials()
 def display_accounts_details():
     """
     Function that returns all the saved credential.
@@ -91,7 +93,7 @@ def copy_password(account):
     """
     return Credentials.copy_password(account)
 
-def passlocker():
+def passlock():
     print("Hello Welcome to your Accounts Password Locker...\n Please enter one of the following to proceed.\n CA ---  Create New Account  \n LI ---  Have An Account  \n")
     short_code=input("").lower().strip()
     if short_code == "ca":
@@ -144,9 +146,9 @@ def passlocker():
                     break
                 else:
                     print("Invalid password please try again")
-            save_credentials(create_new_credential(account,userName,password))
+            save_credentials(Credentials(account,username,password))
             print('\n')
-            print(f"Account Credential for: {{account}} - UserName: {{username}} - Password:{{password}} created succesfully")
+            print(f"Account Credential for: {{account}} - Username: {{username}} - Password:{{password}} created succesfully")
             print('\n')
             print("Welcome, Life is Great with us!!")
         elif short_code == "dc":
@@ -199,4 +201,4 @@ def passlocker():
         print("Please enter a valid password to continue")
 
 if __name__ == '__main__':
-    passlocker()
+    passlock()
