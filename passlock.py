@@ -37,7 +37,7 @@ class User:
         '''
         User.user_list.remove(self)
 
-    class Credentials():
+    class Credentials(User):
         """
         This class creates credentials that help create new objects of credentials
         """
@@ -55,13 +55,13 @@ class User:
                     a_user == user.username
         return a_user
 
-    def __init__(self,account,username, password):
+    def __init__(self,User):
         """
         method that defines user credentials to be stored
         """
-        self.account = account
-        self.username = username
-        self.password = password
+        self.account = User.account
+        self.username = User.username
+        self.password = User.password
 
     def save_credentials(self):
         """
