@@ -1,5 +1,4 @@
 #!/usr/bin/env python3.8
-from passlock import Credentials
 from passlock import User
 from launchpadlib.credentials import Credentials
 from launchpadlib import credentials

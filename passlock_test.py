@@ -55,7 +55,7 @@ class TestCredentials(unittest.TestCase):
             """
             test case to test if the credential object is saved into the credentials list.
             """
-            self.new_credentials.save_credentials()
+            self.new_credentials.save_credentials()    #saving new credentials
             self.assertEqual(len(Credentials.credentials_list),1)
 
         def tearDown(self):
@@ -132,5 +132,5 @@ class TestCredentials(unittest.TestCase):
 
 
 
-if __name__ == '__main__':
-    unittest.main()
+if __name__ == '__passlock__':
+    unittest.passlock()
